@@ -1,4 +1,4 @@
-# rust-actions-demo-
+# rust-actions-demo
 
 [![build-test](https://github.com/xiexianbin/rust-actions-demo/actions/workflows/workflow.yaml/badge.svg)](https://github.com/xiexianbin/rust-actions-demo/actions/workflows/workflow.yaml)
 
