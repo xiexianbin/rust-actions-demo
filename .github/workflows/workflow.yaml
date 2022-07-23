@@ -1,0 +1,55 @@
+name: build-test
+on:
+  push:
+    branches:
+      - main
+      - dev
+      - bug/**
+      - feature/**
+    paths-ignore:
+      - '**.md'
+  pull_request:
+    paths-ignore:
+      - '**.md'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        rust:
+          - stable
+          - beta
+    name: Rust ${{ matrix.rust }} test
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - uses: actions-rs/toolchain@v1
+        with:
+          profile: minimal
+          toolchain: ${{ matrix.rust }}
+          override: true
+          components: rustfmt, clippy
+
+      - name: Check Rust Version
+        run: |
+          rustc --version
+
+      - uses: actions-rs/cargo@v1
+        with:
+          command: fmt
+          args: --all -- --check
+
+      - uses: actions-rs/cargo@v1
+        with:
+          command: test
+
+      - uses: actions-rs/cargo@v1
+        with:
+          command: clippy
+          args: -- -D warnings
+
+      - uses: actions-rs/cargo@v1
+        with:
+          command: build

@@ -1,0 +1,11 @@
+# https://github.com/actions/labeler/blob/master/README.md
+
+code:
+  - ./src/*
+  - ./tests/*
+
+license:
+  - ./LICENSE
+
+actions:
+  - .github/*
