@@ -1,6 +1,7 @@
 # rust-actions-demo
 
 [![build-test](https://github.com/xiexianbin/rust-actions-demo/actions/workflows/workflow.yaml/badge.svg)](https://github.com/xiexianbin/rust-actions-demo/actions/workflows/workflow.yaml)
+![crates.io](https://img.shields.io/crates/v/x_demo.svg)
 
 rust project demo/template with github actions.
 
@@ -9,8 +10,12 @@ rust project demo/template with github actions.
 - release
 
 ```
+// create git tag and binary
 git tag v0.1.0
 git push origin --tags
+
+// publish to https://crates.io/crates/<xxx>
+cargo publish
 ```
 
 - download
@@ -19,3 +24,13 @@ curl -Lfs -o main https://github.com/xiexianbin/rust-actions-demo/releases/lates
 chmod +x demo
 ./demo
 ```
+
+or
+
+```shell
+cargo install x_demo
+```
+
+- 其他示例
+
+https://github.com/xiexianbin/rust-httpserver
