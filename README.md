@@ -1,7 +1,7 @@
 # rust-actions-demo
 
 [![build-test](https://github.com/xiexianbin/rust-actions-demo/actions/workflows/workflow.yaml/badge.svg)](https://github.com/xiexianbin/rust-actions-demo/actions/workflows/workflow.yaml)
-![crates.io](https://img.shields.io/crates/v/x_demo.svg)
+[![crates.io](https://img.shields.io/crates/v/x_demo.svg)](https://crates.io/crates/x_demo)
 
 rust project demo/template with github actions.
 
